@@ -21,7 +21,6 @@ This repository contains two FastAPI applications:
     - [Reports API](#reports-api)
     - [Municipalities API](#municipalities-api)
   - [Contributing](#contributing)
-  - [License](#license)
 
 ## Getting Started
 
@@ -133,9 +132,5 @@ Ensure that the Municipalities API is running before starting the Reports API si
 ## Contributing
 
 Feel free to contribute by opening a pull request or an issue.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 Text partially generated bi A.I.
