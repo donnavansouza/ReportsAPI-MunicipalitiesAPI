@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  reports-api:
+    build:
+      context: ./reports_api
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/mydatabase
+    depends_on:
+      - db
+
+  municipalities-api:
+    build:
+      context: ./municipios_api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mydatabase
+      ANOTHER_POSTGRES_DB: another_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
